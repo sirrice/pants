@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block js %}
+<script type="text/javascript">
+	function addcomment() {
+		$("#error").hide();
+		var name = $("#name").val();
+		var comment = $("#comment").val();
+		var berr = false;
+		var errmsg = "Whoops, please";
+		if (name == "") {
+			errmsg += " tell me your name";
+			berr = true;
+			if (comment == "") 
+				errmsg += " and some feedback!";
+			else
+				errmsg += "!";
+		} else if (comment == "") {
+			errmsg += " provide a comment!";
+			berr = true;
+		}
+		if (berr) {
+			$("#error").text(errmsg);
+			$("#error").fadeIn();
+			return false;
+		}
+		$.post("/addcomment/", {"name":name, "comment":comment}, function (data) {
+			$("#commentsthanks").text("Thanks " + name + "!");
+			$("#addcmtform").fadeOut(function(){$("#commentsthanks").fadeIn();});				
+		});
+		return false;
+	}
+
+	$(document).ready(function(){
+	$("#addcmtform").submit(addcomment);
+	});
+</script>
+{% endblock %}
+
+{% block css %}
+<style>
+	body {font-family: garamond; text-align: center; color: #666; height: 100%; font-size: 20pt;}
+	input, textarea {
+		font-size: 20pt; font-family: garamond; border: none; background: #efefef; 
+		width: 35ex;}
+	#header {padding-top: 20px; margin-bottom: 70px;  position: relative; }
+	#headertext {border-bottom: 1px solid #aaa;}
+	#goback {position: absolute; left: 10px;}
+	input {width: 15ex;}
+	table {font-size: 20pt;}
+	td.text {text-align: right; width: 23ex; vertical-align: top;}
+	td.input {text-align: left; padding-left: 1ex; vertical-align: bottom;}
+	input.submit {background: #4294FF; color: white; border-bottom:3px solid #aaa;}
+	#commentsthanks {font-size: 45pt; text-align: center; padding-top: 30px; display:none;}
+	#error {color: #FF3A6F; font-size: 40pt; text-align: center; padding-top: 30px; display:none; }
+	a { color: #4294FF}
+</style>
+{% endblock %}
+
+{% block body %}
+	<div id="header">
+		<span id="goback"><a href="/">Go Back</a></span>
+		<!--<span id="headertext">Comments</span>-->
+	</div>
+	
+	<form action="/addcomment/" method="post" id="addcmtform"  >
+	<table>
+	<tr>
+		<td class="text">My name is</td>
+		<td class="input"><input id="name" name="name"/>. </td>
+	</tr>
+	<tr>
+		<td class="text">This is what I think about pantsornopants</td>
+		<td class="input"><textarea id="comment" name="comment" rows=5></textarea></td>
+	</tr>
+	<tr>
+		<td class="text">&nbsp;</td>
+		<td class="input"><input class="submit" type="submit"/></td>
+	</tr>
+	</table>
+	</form>
+	<div id="commentsthanks"></div>
+	<div id="error"></div>
+	
+{% endblock %}

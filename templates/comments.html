@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block css %}
+<style>
+	body {font-family: garamond; text-align: center; color: #666; font-size: 20pt;}
+
+	#header {padding-top: 20px; margin-bottom: 70px;  position: relative; }
+	#headertext {border-bottom: 1px solid #aaa;}
+	#goback {position: absolute; left: 10px;}
+	table {font-size: 20pt; width: 90%;}
+	td {padding: 5px;}
+	td.blank {font-size: 10px;}
+	td.namebox {font-size: 15pt; text-align: right; width: 23ex; vertical-align: top; border-right: 1px solid #aaa;}
+	.name {font-weight: bold;}
+	.time {font-size: 10pt;}
+	td.comment {text-align: left; padding-left: 1ex; vertical-align: top;}
+	a { color: #4294FF}
+</style>
+{% endblock %}
+
+{% block body %}
+	
+	<div id="header">
+		<span id="goback"><a href="/">Go Back</a></span>
+		<!--<span id="headertext">Comments</span>-->
+	</div>
+	
+	<table>
+	{% for c in comments %}
+		<tr>
+			<td class="namebox">
+				<div class="name">{{c.name}}</div>
+				<div class="time">{{c.tstamp}}</div>
+			</td>
+			<td class="comment">
+				{{c.comment}}
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="blank">&nbsp;</td>
+		</tr>
+	{% endfor %}
+	</table>
+{% endblock %}

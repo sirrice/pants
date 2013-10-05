@@ -1,0 +1,87 @@
+html {background:#efefef;}
+
+body{position: relative;  min-height: 650px, 100%; width: 700px; margin:0px; margin-left:auto; margin-right:auto; background: white;}
+ 
+  
+a { color: #999; text-decoration: none; border-bottom:1px dotted #aac;}
+a:hover{background:#efefef; border-bottom:1px dotted #aac;}
+  
+  
+img {
+  width:100px; 
+  height:100px;
+  border: 5px solid #efefef;  
+}
+  
+
+.msgdiv { text-align: center; font-size: 30pt; padding-top: 20px; font-family: garamond}
+.msgdiv span {border-bottom:1px dotted #aac; }
+.msgdiv span:hover {background:#efefef; border-bottom:1px dotted #aac;}
+#hello {letter-spacing: 13px;}
+#thanks {letter-spacing:28px;}
+.msgdiv a {color:#4294FF;}
+.msgdiv a.voted{	color: #FF3A6F;}
+.img {margin-top: 20px;text-align: center; position: relative;}
+.dude {width: 300px;  height: 416px; display: inline;}
+
+#nuts, #pants, #sail, #bubble {display:none;}
+.footer { 
+ position: absolute;
+ bottom: 0px;
+ text-align: center;
+ padding: 0px;
+ padding-bottom: 10px;
+ margin-top: 20px;
+ width: 100%;
+ font-size: 10pt;
+ height: 11pt;
+ color: #999;
+ font-family: georgia
+ backgroud: white;
+} 
+
+.footer a { color: #999; text-decoration: none; border-bottom:1px dotted #aac;}
+.footer a:hover{background:#efefef; border-bottom:1px dotted #aac;}
+
+#next, #prev {
+	position: absolute;
+	top: 40px;
+	width: 1em;
+	font-size: 90pt;
+}
+#next:hover, #prev:hover {cursor: pointer;}
+#next {	right: 10px; text-align: right;}
+#prev {	left: 10px;}
+.navimg {
+  width:100px; 
+  height:100px;
+  border: 5px solid #efefef;  
+}
+.navimg:hover {
+  border: 5px solid #FFEDA5;  
+}
+
+
+
+
+
+
+
+
+
+
+/**************************
+ About Page
+ ****************************/
+p#info {font-size: 150%; margin-bottom: -30px;}
+p#wake {font-size: 300%; margin-bottom: -70px;}
+p#keep {font-size: 412%; margin-bottom: -40px;}
+p#bell {font-size: 270%; margin-bottom: -50px;}
+p#suit {font-size: 335%; margin-bottom: -20px;}
+
+p#ente {font-size: 390%; margin-bottom: -90px;}
+p#deci {font-size: 530%; margin-bottom: -40px;}
+p#boot {font-size: 270%; margin-bottom: -60px;}
+p#budd {font-size: 384%; margin-bottom: -20px;}
+
+p#pantslink {font-size: 460%; margin-bottom: 0px;}
