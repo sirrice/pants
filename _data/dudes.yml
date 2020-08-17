@@ -1,0 +1,16 @@
+- name: banana
+  pk: 3
+- name: batman
+  pk: 7
+- name: bear
+  pk: 6
+- name: chicken
+  pk: 5
+- name: orange
+  pk: 4
+- name: rabbit
+  pk: 8
+- name: viking
+  pk: 1
+- name: ninja
+  pk: 2
